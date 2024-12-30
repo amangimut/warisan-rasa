@@ -8,6 +8,7 @@
     $bahan = $_POST['bahan'];
     $cara_membuat = $_POST['cara_membuat'];
     $userid = $_POST['userid'];
+    $foto = $_POST['foto'];
 
     mysqli_query($koneksi,
     "UPDATE resep SET
@@ -16,7 +17,8 @@
     deskripsi='$deskripsi',
     bahan='$bahan',
     cara_membuat='$cara_membuat',
-    userid='$userid'
+    userid='$userid',
+    foto='$foto'
     WHERE idresep='$idresep'");
 
     header("location:resep.php");

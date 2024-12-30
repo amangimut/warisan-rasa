@@ -59,6 +59,7 @@
                     $bahan = $d['bahan'];
                     $cara_membuat = $d['cara_membuat'];
                     $userid = $d['userid'];
+                    $foto = $d['foto'];
                 }
                 ?>
                 <input type="hidden" name="idresep" value="<?php echo $idresep; ?>">
@@ -88,6 +89,10 @@
                 <div class="form-group">
                     <label for="userid">User ID</label>
                     <input type="text" class="form-control" name="userid" id="userid" value="<?php echo $userid; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label for="userid">Foto</label>
+                    <input type="text" class="form-control" name="foto" id="foto" value="<?php echo $foto; ?>">
                 </div>
 
               </div><!-- /.card-body -->

@@ -72,6 +72,10 @@
                     <label for="userid">User ID</label>
                     <input type="text" class="form-control" name="userid" id="userid">
                 </div>
+                <div class="form-group">
+                    <label for="userid">Foto</label>
+                    <input type="text" class="form-control" name="foto" id="foto">
+                </div>
 
               </div><!-- /.card-body -->
               <div class="card-footer">
