@@ -14,7 +14,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Admin</li>
+              <li class="breadcrumb-item active">Kategori</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -39,39 +39,40 @@
               <div class="card-header">
                 <h3 class="card-title">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
-                  Kategori
+                  Resep
                 </h3>
                 <div class="card-tools">
-                  
+                  <a href="tambah_resep.php" class="btn btn-primary"> Tambah </a>
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
               <table class="table table-bordered">
                     <tr align="center">
                         <th>No.</th>
-                        <th>User ID</th>
-                        <th>Password</th>
+                        <th>Nama Resep</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
                     </tr>
                     <?php
                     include 'koneksi.php';
                     $no = 1;
-                    $data = mysqli_query($koneksi, "SELECT * FROM user");
+                    $data = mysqli_query($koneksi, "SELECT * FROM resep");
                     while($d = mysqli_fetch_array($data)){
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $d['userid']; ?></td>
-                        <td><?php echo $d['password']; ?></td>
+                        <td><?php echo $d['nama_resep']; ?></td>
+                        <td><?php echo date('d-m-Y',strtotime($d['tanggal'])); ?></td>
                         <td>
-                            <a href="ubah_user.php?userid=<?= $d['userid']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>
+                            <a href="ubah_resep.php?idresep=<?= $d['idresep']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>
 
-                            <a href="hapus_user.php?userid=<?= $d['userid']; ?>" class="btn btn-danger"
+                            <a href="hapus_resep.php?idresep=<?= $d['idresep']; ?>" class="btn btn-danger"
                             onclick="return confirm('Anda Yakin?')"><i class="fa fa-trash"> Hapus</i></a>
                         </td>
                     </tr>
 
                     <?php } ?>
-                </table> 
+                </table>
               </div><!-- /.card-body -->
             </div>
             <!-- /.card -->
