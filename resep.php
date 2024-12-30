@@ -61,7 +61,7 @@
                     ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $d['namaresep']; ?></td>
+                        <td><?php echo $d['nama_resep']; ?></td>
                         <td><?php echo date('d-m-Y',strtotime($d['tanggal'])); ?></td>
                         <td>
                             <a href="ubah_resep.php?idresep=<?= $d['idresep']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>

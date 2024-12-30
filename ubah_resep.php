@@ -42,7 +42,7 @@
                   Resep
                 </h3>
                 <div class="card-tools">
-                  <a href="tambah_resep.php" class="btn btn-primary"> Tambah </a>
+                  <!-- <a href="tambah_resep.php" class="btn btn-primary"> Tambah </a> -->
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -61,33 +61,33 @@
                     $userid = $d['userid'];
                 }
                 ?>
-                <input type="hidden" name="idresep" value="<?php echo $row['idresep']; ?>">
+                <input type="hidden" name="idresep" value="<?php echo $idresep; ?>">
     
               <div class="form-group">
                     <label for="nama_resep">Nama Resep</label>
                     <input type="text" class="form-control" name="nama_resep" id="nama_resep"
-                    value="<?php echo $row['nama_resep']; ?>" required>
+                    value="<?php echo $nama_resep; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="tanggal">Tanggal</label>
                     <input type="date" class="form-control" name="tanggal" id="tanggal"
-                    value="<?php echo $row['tanggal']; ?>" required>
+                    value="<?php echo $tanggal; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="deskripsi">Deskripsi</label>
-                    <textarea class="form-control" name="deskripsi" id="deskripsi" required><?php echo $row['deskripsi']; ?></textarea>
+                    <textarea class="form-control" name="deskripsi" id="deskripsi" required><?php echo $deskripsi; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="bahan">Bahan</label>
-                    <textarea class="form-control" name="bahan" id="bahan" required><?php echo $row['bahan']; ?></textarea>
+                    <textarea class="form-control" name="bahan" id="bahan" required><?php echo $bahan; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="cara_membuat">Cara Membuat</label>
-                    <textarea class="form-control" name="cara_membuat" id="cara_membuat" required><?php echo $row['cara_membuat']; ?></textarea>
+                    <textarea class="form-control" name="cara_membuat" id="cara_membuat" required><?php echo $cara_membuat; ?></textarea>
                 </div>
                 <div class="form-group">
                     <label for="userid">User ID</label>
-                    <input type="text" class="form-control" name="userid" id="userid" value="<?php echo $row['userid']; ?>" required>
+                    <input type="text" class="form-control" name="userid" id="userid" value="<?php echo $userid; ?>" required>
                 </div>
 
               </div><!-- /.card-body -->

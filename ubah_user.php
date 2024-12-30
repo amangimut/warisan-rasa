@@ -42,7 +42,7 @@
                   User
                 </h3>
                 <div class="card-tools">
-                  <a href="tambah_user.php" class="btn btn-primary"> Tambah </a>
+                  <!-- <a href="tambah_user.php" class="btn btn-primary"> Tambah </a> -->
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
@@ -56,12 +56,12 @@
                     $password = $d['password'];
                 }
                 ?>
-                <input type="hidden" name="userid" value="<?php echo $row['userid']; ?>">
+                <input type="hidden" name="userid" value="<?php echo $userid; ?>">
     
               <div class="form-group">
                     <label for="password">Password</label>
                     <input type="text" class="form-control" name="password" id="password"
-                    value="<?php echo $row['password']; ?>" required>
+                    value="<?php echo $password; ?>" required>
                 </div>
 
               </div><!-- /.card-body -->
