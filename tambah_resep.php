@@ -1,3 +1,16 @@
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
@@ -9,12 +22,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
+            <h1 class="m-0">Resep</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Resep</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -42,11 +55,11 @@
                   Resep
                 </h3>
                 <div class="card-tools">
-                  <a href="tambah_resep.php" class="btn btn-primary"> Tambah </a>
+                  <!-- <a href="tambah_resep.php" class="btn btn-primary"> Tambah </a> -->
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">
-              <form action="tambah_aksi_resep.php" method="POST">
+              <form action="tambah_aksi_resep.php" method="POST" enctype="multipart/form-data">
     
               <div class="form-group">
                     <label for="nama_resep">Nama Resep</label>
@@ -70,11 +83,11 @@
                 </div>
                 <div class="form-group">
                     <label for="userid">User ID</label>
-                    <input type="text" class="form-control" name="userid" id="userid">
+                    <input type="text" class="form-control" name="userid" id="userid" value="<?= $_SESSION['userid']; ?>" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="userid">Foto</label>
-                    <input type="text" class="form-control" name="foto" id="foto">
+                    <label for="foto">Foto</label>
+                    <input type="file" name="foto" id="foto" class="form-control">
                 </div>
 
               </div><!-- /.card-body -->

@@ -1,3 +1,16 @@
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
@@ -9,7 +22,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
+            <h1 class="m-0">User</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

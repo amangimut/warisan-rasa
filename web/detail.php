@@ -170,7 +170,7 @@
                                     </li>
                                     <li><a href="receipe-post.html">Receipies</a></li>
                                     <li><a href="receipe-post.html">4 Vegans</a></li> -->
-                                    <li><a href="contact.html">Login</a></li>
+                                    <li><a href="../login.php">Login</a></li>
                                 </ul>
 
                                 <!-- Newsletter Form -->
@@ -194,7 +194,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="breadcumb-text text-center">
-                        <h2>Recipe</h2>
+                        <h2>Resep</h2>
                     </div>
                 </div>
             </div>
@@ -240,21 +240,7 @@
 
         <!-- Receipe Slider -->
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="receipe-slider owl-carousel">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                        <img src="img/bg-img/bg5.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Receipe Content Area -->
-        <div class="receipe-content-area">
-            <div class="container">
-                <?php
+            <?php
                 include '../koneksi.php';
                 $idresep = $_GET ['idresep'];
                 $data = mysqli_query($koneksi,"SELECT * FROM resep WHERE idresep='$idresep'");
@@ -269,6 +255,18 @@
                     $foto = $d['foto'];
                 }
                 ?>
+            <div class="row">
+                <div class="col-12">
+                    <div class="receipe-slider owl-carousel">
+                        <img src="../foto/<?= $foto; ?>" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Receipe Content Area -->
+        <div class="receipe-content-area">
+            <div class="container">
 
                 <div class="row">
                     <div class="col-12 col-md-8">

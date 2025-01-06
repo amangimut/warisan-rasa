@@ -1,3 +1,16 @@
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 

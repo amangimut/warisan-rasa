@@ -1,3 +1,16 @@
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
@@ -9,12 +22,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
+            <h1 class="m-0">Resep</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Resep</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -51,6 +64,7 @@
                         <th>No.</th>
                         <th>Nama Resep</th>
                         <th>Tanggal</th>
+                        <th>Foto</th>
                         <th>Aksi</th>
                     </tr>
                     <?php
@@ -60,10 +74,16 @@
                     while($d = mysqli_fetch_array($data)){
                     ?>
                     <tr>
-                        <td><?php echo $no++; ?></td>
+                        <td class="text-center"><?php echo $no++; ?></td>
                         <td><?php echo $d['nama_resep']; ?></td>
-                        <td><?php echo date('d-m-Y',strtotime($d['tanggal'])); ?></td>
-                        <td>
+                        <td class="text-center"><?php echo date('d-m-Y',strtotime($d['tanggal'])); ?></td>
+                        <td class="text-center">
+                          <?php 
+                          if($d['foto']){ ?>
+                            <img src="foto/<?php echo $d['foto'] ?>" width="auto" height="50">
+                          <?php } ?>
+                        </td>
+                        <td class="text-center">
                             <a href="ubah_resep.php?idresep=<?= $d['idresep']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>
 
                             <a href="hapus_resep.php?idresep=<?= $d['idresep']; ?>" class="btn btn-danger"

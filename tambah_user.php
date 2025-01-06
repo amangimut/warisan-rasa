@@ -1,38 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah User</title>
-</head>
-<body>
-    <a href="user.php">Kembali</a>
-    <br>
-    <form action="tambah_aksi_user.php" method="POST">
-    <table>
-        <tr>
-            <td>User ID</td>
-            <td>
-                <input type="text" name="userid">
-            </td>
-        </tr>
-        <tr>
-            <td>Password</td>
-            <td>
-                <input type="text" name="password">
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>
-                <input type="reset" value="Batal">
-                <input type="submit" value="Simpan">
-            </td>
-        </tr>
-    </form>
-    
-</body>
-</html>
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
 
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
@@ -45,7 +22,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
+            <h1 class="m-0">User</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -78,7 +55,7 @@
                   Admin
                 </h3>
                 <div class="card-tools">
-                  <a href="tambah_user.php" class="btn btn-primary"> Tambah </a>
+                  <!-- <a href="tambah_user.php" class="btn btn-primary"> Tambah </a> -->
                 </div>
               </div><!-- /.card-header -->
               <div class="card-body">

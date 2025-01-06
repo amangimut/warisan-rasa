@@ -1,3 +1,16 @@
+<!-- pengecekan session -->
+<?php 
+
+session_start(); 
+
+if (!isset($_SESSION['userid'])) { 
+
+ header("Location: login.php"); 
+
+} 
+
+?>
+
 <?php include 'header.php'; ?>
 <?php include 'sidebar.php'; ?>
 
@@ -9,12 +22,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Kategori</h1>
+            <h1 class="m-0">Resep</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Kategori</li>
+              <li class="breadcrumb-item active">Resep</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -88,11 +101,11 @@
                 </div>
                 <div class="form-group">
                     <label for="userid">User ID</label>
-                    <input type="text" class="form-control" name="userid" id="userid" value="<?php echo $userid; ?>" required>
+                    <input type="text" class="form-control" name="userid" id="userid" value="<?php echo $userid; ?>" required readonly>
                 </div>
                 <div class="form-group">
                     <label for="userid">Foto</label>
-                    <input type="text" class="form-control" name="foto" id="foto" value="<?php echo $foto; ?>">
+                    <input type="text" class="form-control" name="foto" id="foto" value="<?php echo $foto; ?>" readonly>
                 </div>
 
               </div><!-- /.card-body -->
