@@ -63,7 +63,6 @@ if (!isset($_SESSION['userid'])) {
                     <tr align="center">
                         <th>No.</th>
                         <th>User ID</th>
-                        <th>Password</th>
                     </tr>
                     <?php
                     include 'koneksi.php';
@@ -74,7 +73,6 @@ if (!isset($_SESSION['userid'])) {
                     <tr>
                         <td><?php echo $no++; ?></td>
                         <td><?php echo $d['userid']; ?></td>
-                        <td><?php echo $d['password']; ?></td>
                         <td>
                             <a href="ubah_user.php?userid=<?= $d['userid']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>
 
